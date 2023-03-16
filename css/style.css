@@ -1,0 +1,324 @@
+@import url(mixin.scss);
+@import url(variable.scss);
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto;
+}
+html h1,
+html h2,
+body h1,
+body h2 {
+  margin-left: 10px;
+}
+
+@keyframes cascade {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+h1 {
+  font-family: roboto;
+  font-size: 150%;
+  font-weight: bold;
+}
+
+h2 {
+  font-family: roboto;
+  font-size: 130%;
+  font-weight: bold;
+}
+
+h3 {
+  font-family: roboto;
+  font-size: 110%;
+  font-weight: bold;
+}
+
+header {
+  background-color: #f7f7f7;
+}
+header img#logo {
+  width: 50%;
+  display: flex;
+  margin: auto;
+  margin-top: 20px;
+}
+header #location {
+  display: flex;
+  justify-content: center;
+  background-color: #eaeaea;
+  box-shadow: inset 5px 8px 5px -10px black;
+  height: 50px;
+  margin: 5px 0 5px 0;
+}
+header #location i,
+header #location span {
+  padding: 15px 5px 0 0;
+}
+header #reservation {
+  text-align: center;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+header #reservation span {
+  font-weight: 100;
+}
+header #buton {
+  color: white;
+  display: block;
+  width: 80%;
+  margin: auto;
+  line-height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #9356DC;
+  text-decoration: none;
+  border-radius: 30px;
+  background: linear-gradient(#FF79DA, #9356DC);
+  margin-bottom: 50px;
+}
+
+#container_one a {
+  text-decoration: none;
+  color: black;
+}
+#container_one li {
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.13);
+  border-radius: 20px;
+  background-color: #f6f6f6;
+  display: flex;
+  color: black;
+  gap: 20px;
+}
+#container_one li span.number {
+  position: absolute;
+  left: 32px;
+  background-color: #9356DC;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+}
+#container_one li i {
+  color: grey;
+}
+#container_one li:hover {
+  background: #f5edff;
+}
+#container_one li:hover i {
+  color: #9356DC;
+}
+
+#container_two .card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  justify-content: flex-start;
+  -webkit-box-shadow: -1px 6px 14px 5px rgba(0, 0, 0, 0.46);
+  box-shadow: -1px 6px 14px 5px rgba(0, 0, 0, 0.46);
+  flex: 1;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+#container_two .card a {
+  text-decoration: none;
+  color: black;
+}
+#container_two .card img {
+  height: 125px;
+  border-radius: 20px 20px 0px 0px;
+  object-fit: cover;
+  width: 100%;
+}
+#container_two .card h3,
+#container_two .card span {
+  padding: 5px 10px;
+  margin: 0;
+}
+#container_two .card i {
+  background-clip: text;
+  opacity: 1;
+}
+#container_two .card .header_card {
+  position: relative;
+}
+#container_two .card .footer_card {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+#container_two .card .footer_card .heart .top_heart {
+  position: absolute;
+  background: linear-gradient(#FF79DA, #9356DC);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  opacity: 0;
+  left: 0;
+  top: 0;
+}
+#container_two .card .footer_card .heart .top_heart:hover {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+#container_two .card .footer_card .heart .bottom_heart {
+  position: relative;
+  color: black;
+  font-size: x-large;
+}
+
+.card_nouveau {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  padding: none;
+  color: #008766;
+  background-color: #99E2D0;
+}
+
+footer {
+  background-color: #353535;
+  color: white;
+  padding-top: 20px;
+}
+footer .logo_footer {
+  padding: 20px 0 0 15px;
+  font-family: Shrikhand;
+  margin-left: 10px;
+}
+footer ul {
+  list-style-type: none;
+  padding: 10px 0 20px 10px;
+  margin: auto;
+}
+footer li {
+  padding-bottom: 10px;
+  padding-left: 5px;
+}
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+img.table {
+  width: 100%;
+}
+
+hr {
+  border: none;
+  border-bottom: 3px solid #99E2D0;
+  width: 50px;
+  margin-left: 12px;
+}
+
+#container_menu {
+  background-color: #f7f7f7;
+  border-radius: 50px 50px 0 0;
+}
+
+.header_menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card, .card_menu {
+  animation: cascade;
+  animation-duration: 1000ms;
+  animation-fill-mode: backwards;
+}
+
+.card_menu {
+  background: #FFFFFF;
+  border-radius: 20px;
+  justify-content: flex-start;
+  -webkit-box-shadow: -1px 6px 14px 5px rgba(0, 0, 0, 0.46);
+  box-shadow: -1px 6px 14px 5px rgba(0, 0, 0, 0.46);
+  flex: 1;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  overflow: hidden;
+}
+.card_menu .title_menu {
+  padding-left: 10px;
+}
+.card_menu .header_span {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+}
+.card_menu .heart .heart .top_heart {
+  position: absolute;
+  background: linear-gradient(#FF79DA, #9356DC);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  opacity: 0;
+  left: 0;
+  top: 0;
+}
+.card_menu .heart .heart .top_heart:hover {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.card_menu .heart .heart .bottom_heart {
+  position: relative;
+  color: black;
+  font-size: x-large;
+}
+.card_menu .card_check {
+  display: inline-block;
+  transform: translate(500px, 0px);
+  color: #f6f6f6;
+  background-color: #99e2d0;
+  width: 10%;
+  font-size: xx-large;
+  text-align: center;
+  line-height: 50px;
+  white-space: nowrap;
+  border-top-right-radius: 20px 20px;
+  border-bottom-right-radius: 20px 20px;
+  cursor: pointer;
+  transition: all 600ms;
+}
+.card_menu .card_check:hover {
+  transform: translateX(-10px);
+  background-color: #99e2d0;
+  cursor: pointer;
+  color: #f6f6f6;
+}
+.card_menu .card_check i:hover {
+  display: inline-block;
+  transform: trarotate(360deg);
+}
+
+.button_order {
+  color: white;
+  display: block;
+  width: 80%;
+  margin: auto;
+  line-height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #9356DC;
+  text-decoration: none;
+  border-radius: 30px;
+  background: linear-gradient(#FF79DA, #9356DC);
+}
+
+/*# sourceMappingURL=style.css.map */

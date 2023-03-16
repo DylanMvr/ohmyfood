@@ -1,0 +1,76 @@
+@mixin header {
+    background-color: #f7f7f7;
+    img#logo {
+        width: 50%;
+        display: flex;
+        margin: auto;
+        margin-top: 20px;
+    }
+}
+
+@mixin base-button {
+    color: white;
+    display: block;
+    width: 80%;
+    margin: auto;
+    line-height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: $violet;
+    text-decoration: none;
+    border-radius: 30px;
+    background: linear-gradient($rose, $violet);
+
+}
+
+
+@mixin menu {
+    background-color: $grisclair;
+    display: block;
+    width: 100%;
+
+    &:hover {
+        color: #FFC0CB;
+    }
+
+}
+
+@mixin footer {
+    background-color: #353535;
+    color: white;
+    padding-top: 20px;
+    .logo_footer {
+        padding: 20px 0 0 15px;
+        font-family: Shrikhand;
+        margin-left: 10px;
+    }
+    ul {
+        list-style-type: none;
+        padding: 10px 0 20px 10px ;
+    }
+    li {
+        padding-bottom: 10px;
+        padding-left: 5px;
+        
+    }
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+
+}
+
+@mixin button_order {
+    color: white;
+    display: block;
+    width: 80%;
+    margin: auto;
+    line-height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: $violet;
+    text-decoration: none;
+    border-radius: 30px;
+    background: linear-gradient($rose, $violet);
+}
