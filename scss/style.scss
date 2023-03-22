@@ -9,7 +9,8 @@ body {
 
     h1,
     h2 {
-        margin-left: 10px;
+        margin-left: 20px;
+        margin-top: 20px;
     }
 
 }
@@ -90,45 +91,48 @@ $gradient : linear-gradient($rose, $violet);
 @mixin button_order {
     color: white;
     display: block;
-    width: 80%;
+    max-width: 250px;
     margin: auto;
     line-height: 50px;
     text-align: center;
     vertical-align: middle;
     background-color: $violet;
     text-decoration: none;
-    border-radius: 30px;
+    border-radius: 50px;
     background: linear-gradient($rose, $violet);
+    margin-bottom: 20px;
+    box-shadow: 4px 4px 2px lightgrey;
+    ;
 }
 
-@mixin heart_over {
-    .heart {
-        .top_heart {
-            position: absolute;
-            background: linear-gradient($rose, $violet);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            opacity: 0;
-            left: 0;
-            top: 0;
+@mixin heart_hover {
 
-            &:hover {
-                opacity: 1;
-                transition: opacity 200ms;
-            }
+    .top_heart {
+        position: absolute;
+        background: linear-gradient($rose, $violet);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        opacity: 0;
+        left: 0;
+        top: 0;
 
-        }
-
-        .bottom_heart {
-            position: relative;
-            color: black;
-            font-size: x-large;
+        &:hover {
+            opacity: 1;
+            transition: opacity 200ms;
         }
 
     }
 
+    .bottom_heart {
+        position: relative;
+        color: black;
+        font-size: x-large;
+    }
+
 }
+
+
 
 @keyframes cascade {
     from {
@@ -143,7 +147,7 @@ $gradient : linear-gradient($rose, $violet);
 }
 
 h1 {
-    font-family: roboto;
+    font-family: shrikhand;
     font-size: 150%;
     font-weight: bold;
 }
@@ -159,14 +163,19 @@ h3 {
     font-family: roboto;
     font-size: 110%;
     font-weight: bold;
+    margin-bottom: 0;
 
 }
 
+// // Media Queries Telephone // 
+// @media screen and (min-width: 320px)
 
-//header
+//header 
 
 header {
     background-color: #f7f7f7;
+    position: relative;
+    z-index: -1;
 
     img#logo {
         width: 50%;
@@ -195,7 +204,7 @@ header {
         margin-bottom: 20px;
 
         span {
-            font-weight: 100;
+            font-weight: bold;
         }
     }
 
@@ -281,13 +290,16 @@ header {
     }
 
 
+
     i {
+        padding-top: 10px;
+        padding-right: 10px;
         // color: linear-gradient($rose, $violet);
         // background-clip: text;
         // color: transparent;
         background-clip: text;
         opacity: 1;
-        ;
+
         // display: flex;
         // justify-content: flex-end;
         // padding-left: 10px;
@@ -402,6 +414,19 @@ footer {
 
 // Header
 
+.header_logo {
+    font-family: Shrikhand;
+    margin: 0;
+    text-align: center;
+}
+
+.header_arrow {
+    color: black;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+}
+
 
 img.table {
     width: 100%;
@@ -416,39 +441,78 @@ hr {
     border: none;
     border-bottom: 3px solid $vert;
     width: 50px;
-    margin-left: 12px;
+    margin-left: 20px;
 }
 
 #container_menu {
     background-color: #f7f7f7;
     border-radius: 50px 50px 0 0;
+    margin-top: -58px;
 }
 
 .header_menu {
     display: flex;
     justify-content: space-between;
+
+    .heart {
+        padding-right: 20px;
+        padding-top: 20px;
+
+    }
 }
 
-.card ,.card_menu {
+.card,
+.card_menu {
     animation: cascade;
     animation-duration: 1000ms;
     animation-fill-mode: backwards;
+}
+
+img.table {
+    z-index: -1;
+
 }
 
 .card_menu {
 
     background: #FFFFFF;
     border-radius: 20px;
-    justify-content: flex-start;
+    justify-content: space-between;
     -webkit-box-shadow: -1px 6px 14px 5px rgba(0, 0, 0, 0.46);
     box-shadow: -1px 6px 14px 5px rgba(0, 0, 0, 0.46);
     flex: 1;
     margin: 20px;
     display: flex;
-    flex-direction: column;
-    padding-bottom: 10px;
-    padding-left: 10px;
+    flex-direction: row;
     overflow: hidden;
+
+    .card_text {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 10px;
+        margin-left: 10px;
+
+        .price_menu {
+            width: 50px;
+            text-align: center;
+            margin-top: 25px;
+            font-weight: bold;
+        }
+    }
+
+    .card_check {
+        width: 85px;
+        text-align: center;
+        background-color: $vert;
+
+        i {
+            color: white;
+            font-weight: bold;
+        }
+    }
+
 
     .title_menu {
         padding-left: 10px
@@ -462,37 +526,60 @@ hr {
         padding-left: 10px;
     }
 
-    .heart {
-        @include heart_over;
+
+    div.heart {
+        padding-right: 10px;
+        padding-top: 10px;
+    }
+
+    &:hover {
+        .card_check {
+            width: 85px;
+            transform: translateX(0px);
+            transition: 600ms;
+            font-size: x-large;
+
+            i {
+                transform: rotate(720deg);
+                transition: 600ms;
+                margin-top: 30px;
+                font-size: x-large;
+            }
+        }
+
+
     }
 
     .card_check {
-        display: inline-block;
-        transform: translate(500px, 0px);
-        color: #f6f6f6;
-        background-color: #99e2d0;
-        width: 10%;
-        ;
-        font-size: xx-large;
-        text-align: center;
-        line-height: 50px;
-        white-space: nowrap;
-        border-top-right-radius: 20px 20px;
-        border-bottom-right-radius: 20px 20px;
-        // transform: translateX(100px);
-        cursor: pointer;
-        transition: all 600ms;
+        transform: translateX(70px);
+        width: 0;
+
+        // display: inline-block;
+        // transform: translate(500px, 0px);
+        // color: #f6f6f6;
+        // background-color: #99e2d0;
+        // width: 10%;
+        // ;
+        // font-size: xx-large;
+        // text-align: center;
+        // line-height: 50px;
+        // white-space: nowrap;
+        // border-top-right-radius: 20px 20px;
+        // border-bottom-right-radius: 20px 20px;
+        // // transform: translateX(100px);
+        // cursor: pointer;
+        // transition: all 600ms;
 
         &:hover {
-            transform: translateX(-10px);
-            background-color: #99e2d0;
-            cursor: pointer;
-            color: #f6f6f6;
+            // transform: translateX(-10px);
+            // background-color: #99e2d0;
+            // cursor: pointer;
+            // color: #f6f6f6;
         }
 
         i:hover {
-            display: inline-block;
-            transform: trarotate(360deg);
+            // display: inline-block;
+            // transform: trarotate(360deg);
         }
 
     }
@@ -500,11 +587,30 @@ hr {
 }
 
 
+.bottom_heart {
+    position: relative;
+    color: black;
+    font-size: x-large;
+}
+
+.top_heart {
+    position: absolute;
+    background: linear-gradient($rose, $violet);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    opacity: 0;
+    left: 0;
+    top: 0;
+
+    &:hover {
+        opacity: 1;
+        transition: opacity 200ms;
+    }
+}
 
 
-
-
-
+Loader test 
 
 
 
@@ -520,3 +626,13 @@ hr {
 .button_order {
     @include button_order;
 }
+
+
+
+// // Media Queries Tablette // 
+// @media screen and (min-widht : 600px)
+
+
+
+// // Media Queries Desktop // 
+// @media screen and (min-widht:1025px)
